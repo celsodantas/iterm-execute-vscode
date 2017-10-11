@@ -1,0 +1,50 @@
+{
+    "name": "iterm-execute",
+    "displayName": "iterm-execute",
+    "description": "Pluggin to extract Ruby context and execute it onn iTerm",
+    "version": "0.0.1",
+    "publisher": "celsodantas",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello",
+        "onCommand:extension.runRubyTest",
+        "onCommand:extension.runRubyCurrentLineTest"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            },
+            {
+                "command": "extension.runRubyTest",
+                "title": "Run Current Ruby Test file on iTerm"
+            },
+            {
+                "command": "extension.runRubyCurrentLineTest",
+                "title": "Run Current Line of Ruby Test file on iTerm"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5",
+        "mocha": "^3.5.0",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.0",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "node-osascript": "^2.0.0"
+    }
+}
